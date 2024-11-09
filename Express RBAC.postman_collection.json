@@ -1,0 +1,235 @@
+{
+	"info": {
+		"_postman_id": "df587c62-134a-4071-b1b6-9794c7cefef3",
+		"name": "Express RBAC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24896527"
+	},
+	"item": [
+		{
+			"name": "Resources (CRUD)",
+			"item": [
+				{
+					"name": "[Create] Resources",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzMxMTQ2MTIzLCJleHAiOjE3MzExNDk3MjN9.3PA78ZkOMrLDhHxL7U5cEd8cnEV4ivOJHtOTAZGO500",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Resource 4",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/resource/",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"resource",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Read] Resources",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzMxMTUwMDcwLCJleHAiOjE3MzExNTM2NzB9.Td2PVSuikht4-4bV0-Bie2sYaQPVcMruAQHMI4I0Te4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{LOCAL}}/resource",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"resource"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Update] Resources",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzMxMTQ2MTIzLCJleHAiOjE3MzExNDk3MjN9.3PA78ZkOMrLDhHxL7U5cEd8cnEV4ivOJHtOTAZGO500",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Resource 4 new :)",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/resource/4",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"resource",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[Delete] Resources",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZSI6IkFkbWluIiwiaWF0IjoxNzMxMTQ2MTIzLCJleHAiOjE3MzExNDk3MjN9.3PA78ZkOMrLDhHxL7U5cEd8cnEV4ivOJHtOTAZGO500",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Resource 4 new",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{LOCAL}}/resource/4",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"resource",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"admin\",\n  \"password\": \"adminpassword\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LOCAL}}/auth/login",
+							"host": [
+								"{{LOCAL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}",
+					"host": [
+						"{{LOCAL}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "LOCAL",
+			"value": "http://localhost:5000",
+			"type": "string"
+		}
+	]
+}
